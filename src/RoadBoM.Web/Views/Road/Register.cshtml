@@ -1,0 +1,104 @@
+﻿@model RoadBoM.Web.Models.ViewModels.RoadViewModel
+@{
+    ViewData["Title"] = "Enrol";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+<!-- Start Page Title -->
+<div class="pagetitle">
+    <h1>Register Road</h1>
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <form asp-action="Enrol">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="row mb-3">
+                    <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label asp-for="Location" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Location" class="form-control" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label asp-for="Length" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Length" class="form-control" />
+                        <span asp-validation-for="Length" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label asp-for="Width" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Width" class="form-control" />
+                        <span asp-validation-for="Width" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label asp-for="Row" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Row" class="form-control" />
+                        <span asp-validation-for="Row" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label asp-for="Poles" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Poles" class="form-control" />
+                        <span asp-validation-for="Poles" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label asp-for="Type" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label asp-for="Culvert" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Culvert" class="form-control" />
+                        <span asp-validation-for="Culvert" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="Outfall" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <input asp-for="Outfall" class="form-control" />
+                        <span asp-validation-for="Outfall" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<div>
+    <a asp-action="Applicants">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

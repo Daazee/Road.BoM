@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadBoM.Web", "src\RoadBoM.Web\RoadBoM.Web.csproj", "{3F7FB888-A277-45C7-9661-5FDCAFEBBCBE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RoadBoM.DB", "src\RoadBoM.DB\RoadBoM.DB.sqlproj", "{3ADFE765-2697-43D7-B870-32978D4CF7FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F7FB888-A277-45C7-9661-5FDCAFEBBCBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7FB888-A277-45C7-9661-5FDCAFEBBCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7FB888-A277-45C7-9661-5FDCAFEBBCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7FB888-A277-45C7-9661-5FDCAFEBBCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADFE765-2697-43D7-B870-32978D4CF7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADFE765-2697-43D7-B870-32978D4CF7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADFE765-2697-43D7-B870-32978D4CF7FB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3ADFE765-2697-43D7-B870-32978D4CF7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADFE765-2697-43D7-B870-32978D4CF7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADFE765-2697-43D7-B870-32978D4CF7FB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3321C871-78FC-4FF7-8F36-A5DA871FB120}
+	EndGlobalSection
+EndGlobal
