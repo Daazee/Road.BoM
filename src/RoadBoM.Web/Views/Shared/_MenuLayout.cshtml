@@ -88,18 +88,34 @@
             @*<li class="nav-heading">Pages</li>*@
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="@Url.Action("Test","Applicant")">
+                <a class="nav-link collapsed" href="@Url.Action("AllRoads","Road")">
                     <i class="bi bi-file-earmark"></i>
-                    <span>Test</span>
+                    <span>Road</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="@Url.Action("MyResult","Applicant")">
-                    <i class="bi bi-file-earmark"></i>
-                    <span>My Test Result</span>
+                <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-gem"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li>
+                <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="@Url.Action("BillCategories","Setting")">
+                            <i class="bi bi-circle"></i><span>Bill Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("BillItems","Setting")">
+                            <i class="bi bi-circle"></i><span>Bill Item</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("BillItemRates","Setting")">
+                            <i class="bi bi-circle"></i><span>Bill Item Rate</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Settings Nav -->
 
         </ul>
 
