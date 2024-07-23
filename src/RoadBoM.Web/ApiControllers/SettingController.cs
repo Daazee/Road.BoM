@@ -159,8 +159,8 @@ namespace RoadBoM.Web.ApiControllers
         }
 
         [HttpGet]
-        [Route("GetCategories")]
-        public async Task<IApiResponse<List<GetCategoryResponseDTO>>> GetCategories()
+        [Route("GetBillCategories")]
+        public async Task<IApiResponse<List<GetCategoryResponseDTO>>> GetBillCategories()
         {
             try
             {
