@@ -1,0 +1,52 @@
+﻿@model IEnumerable<RoadBoM.Web.Models.ViewModels.BillCategoryViewModel>
+@{
+    ViewData["Title"] = "Enrol";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+<!-- Start Page Title -->
+<div class="pagetitle">
+    <h1>Bill Categories</h1>
+</div><!-- End Page Title -->
+
+
+<p>
+    <a asp-action="Enrol">Add New Road</a>
+</p>
+<table class="table datatable">
+    <thead>
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Order</th>
+            <th scope="col">Status</th>
+            @*<th scope="col"></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+                </tr>
+            }
+        }
+    </tbody>
+</table>
