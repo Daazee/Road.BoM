@@ -1,52 +1,45 @@
-﻿@model IEnumerable<RoadBoM.Web.Models.ViewModels.BillCategoryViewModel>
-@{
+﻿@{
     ViewData["Title"] = "Enrol";
     Layout = "~/Views/Shared/_MenuLayout.cshtml";
 }
 <!-- Start Page Title -->
 <div class="pagetitle">
-    <h1>Bill Categories</h1>
+    <h1>Roads</h1>
 </div><!-- End Page Title -->
 
 
 <p>
     <a asp-action="Enrol">Add New Road</a>
 </p>
-<table class="table datatable">
+<table id="table-roads"  class="table">
     <thead>
         <tr>
-            <th scope="col">Code</th>
-            <th scope="col">Description</th>
-            <th scope="col">Order</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Width</th>
+            <th>Row</th>
+             <th>Poles</th>
+            <th>Type</th>
+            <th>Culvert</th>
+            <th>Outfall</th>
             <th scope="col">Status</th>
-            @*<th scope="col"></th>*@
+            <th scope="col">Created On</th>
+            <th scope="col">Updated On</th>
+            <th></th><!--Actions Edit, Delete ect -->
         </tr>
     </thead>
-    <tbody>
-        @if (Model != null)
-        {
-            foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Code)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Order)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    @*<td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>*@
-                </tr>
-            }
-        }
-    </tbody>
 </table>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript" src="~/views/Road/road.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+        });
+
+        let permission = {
+        };
+        let road = Road(permission);
+        road.init();
+    </script>
+}
