@@ -34,14 +34,40 @@ BillCategory.prototype.bindBillCategories = function () {
                 serverSide: true,
                 filter: true,
                 columns: [
+                    { data: 'id' },
                     { data: 'code', name: 'Code', autoWidth: true },
-                    { data: 'description', name: 'Description', autoWidth: true }
+                    { data: 'description', name: 'Description', autoWidth: true },
+                    {
+                        data: 'status', name: 'Status', autoWidth: true, render: function (data) {
+                                if (data === 0)
+                                    return "Active"
+                            else
+                                return "Inactive"
+                        }
+                    },
+                    {
+                        data: 'createdOn', name: 'CreatedOn', autoWidth: true, render: function (data) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            return (month.toString().length > 1 ? month : "0" + month) + "/" + date.getDate() + "/" + date.getFullYear();
+                        }
+                    },
+                    {
+                        data: 'updatededOn', name: 'UpdatededOn', autoWidth: true, render: function (data) {
+                            if (data !== "" && data !== null && data !== undefined) {
+                                var date = new Date(data);
+                                var month = date.getMonth() + 1;
+                                return (month.toString().length > 1 ? month : "0" + month) + "/" + date.getDate() + "/" + date.getFullYear();
+                            }
+                            return "";
+                        }
+                    },
                 ],
-                //columnDefs: [{
-                //    targets: [0],
-                //    visible: false,
-                //    searchable: false
-                //}],
+                columnDefs: [{
+                    targets: [0],
+                    visible: false,
+                    searchable: false
+                }],
             });
         }
     } catch (e) {
