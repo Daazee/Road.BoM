@@ -1,4 +1,4 @@
-﻿@model RoadBoM.Web.Models.ViewModels.RoadViewModel
+﻿@* @model RoadBoM.Web.Models.ViewModels.RoadViewModel *@
 @{
     ViewData["Title"] = "Enrol";
     Layout = "~/Views/Shared/_MenuLayout.cshtml";
@@ -9,7 +9,7 @@
 </div><!-- End Page Title -->
 
 <section class="section">
-    <div class="row">
+    @* <div class="row">
         <div class="col-lg-12">
             <form asp-action="Enrol">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -91,7 +91,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> *@
 </section>
 <div>
     <a asp-action="Applicants">Back to List</a>
