@@ -1,6 +1,6 @@
 ﻿namespace RoadBoM.Web.Models.DTOs.Response
 {
-    public class GetCategoryResponseDTO
+    public class GetBillCategoryResponseDTO
     {
         public long Id { get; set; }
         public string Code { get; set; } = null!;

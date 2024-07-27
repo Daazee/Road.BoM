@@ -133,7 +133,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- Vendor JS Files -->
-    <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    @* <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script> Disable due to sliwness reported on *@
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/vendor/chart.js/chart.min.js"></script>
     <script src="~/assets/vendor/echarts/echarts.min.js"></script>
@@ -145,6 +145,24 @@
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Datatables Js Files-->
+    <script src="~/lib/datatables/dist/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/dist/js/datatables-bootstrap5.js"></script>
+    <script src="~/lib/datatables/dist/js/datatables.responsive.js"></script>
+    <script src="~/lib/datatables/dist/js/responsive.bootstrap5.js"></script>
+    <script src="~/lib/datatables/dist/js/datatables-buttons.js"></script>
+    <script src="~/lib/datatables/dist/js/buttons.bootstrap5.js"></script>
+    @*<script src="~/lib/datatables/dist/js/jszip.js"></script>
+    <script src="~/lib/datatables/dist/js/buttons.html5.js"></script>
+    <script src="~/lib/datatables/dist/js/buttons.print.js"></script>
+    <script src="~/lib/datatables/dist/js/dataTables.checkboxes.min.js"></script> *@
+    <script>
+        var baseUrl = "https://localhost:7177";
+        $(document).ready(function () {
+            console.log("base url: " + baseUrl);
+            // $('#@ViewBag.ActiveMenu').addClass('active');
+        });
+        </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

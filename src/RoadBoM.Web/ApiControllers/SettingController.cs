@@ -160,13 +160,13 @@ namespace RoadBoM.Web.ApiControllers
 
         [HttpGet]
         [Route("GetBillCategories")]
-        public async Task<IApiResponse<List<GetCategoryResponseDTO>>> GetBillCategories()
+        public async Task<IApiResponse<List<GetBillCategoryResponseDTO>>> GetBillCategories()
         {
             try
             {
                 return await HandleApiOperationAsync(async () =>
                 {
-                    List<GetCategoryResponseDTO> output = new List<GetCategoryResponseDTO>();
+                    List<GetBillCategoryResponseDTO> output = new List<GetBillCategoryResponseDTO>();
                     try
                     {
                         var result = await _billCategoryRepository.GetItems();
@@ -176,7 +176,7 @@ namespace RoadBoM.Web.ApiControllers
                             {
                                 foreach (var item in result)
                                 {
-                                    output.Add(new GetCategoryResponseDTO
+                                    output.Add(new GetBillCategoryResponseDTO
                                     {
                                         Id = item.Id,
                                         Code = item.Code,
@@ -195,7 +195,7 @@ namespace RoadBoM.Web.ApiControllers
                     {
                         throw;
                     }
-                    return new DefaultApiResponse<List<GetCategoryResponseDTO>>
+                    return new DefaultApiResponse<List<GetBillCategoryResponseDTO>>
                     {
                         Object = output
                     };
