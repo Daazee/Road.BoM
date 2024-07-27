@@ -39,8 +39,8 @@ BillCategory.prototype.bindBillCategories = function () {
                     { data: 'description', name: 'Description', autoWidth: true },
                     {
                         data: 'status', name: 'Status', autoWidth: true, render: function (data) {
-                                if (data === 0)
-                                    return "Active"
+                            if (data === 0)
+                                return "Active"
                             else
                                 return "Inactive"
                         }
@@ -62,11 +62,29 @@ BillCategory.prototype.bindBillCategories = function () {
                             return "";
                         }
                     },
+                    { data: '', autoWidth: true },
                 ],
                 columnDefs: [{
                     targets: [0],
                     visible: false,
                     searchable: false
+                },
+                {
+                    // Actions
+                    targets: -1,
+                    title: 'Actions',
+                    searchable: false,
+                    orderable: false,
+                    render: function (data, type, full, meta) {
+                        var btnEditConfig = "btnEditConfig" + full.id;
+                        var htmlCheckbox = '<input type="checkbox" id="' + full.id + '"  Class="form-check-input" checked onclick="billCategory.renderEditConfigView(\'' + full.id + '\')">';
+                        var chkConfig = "chkConfig" + full.id;
+                        return (
+                            '<div class="d-inline-block text-nowrap">' +
+                            '<div class="form-check form-switch app-switch camp-switch">' + htmlCheckbox + ' </div>' +
+                            '</div>'
+                        );
+                    }
                 }],
             });
         }
@@ -74,6 +92,27 @@ BillCategory.prototype.bindBillCategories = function () {
         debugger;
     }
 };
+
+BillCategory.prototype.renderEditConfigView = function (configId) {
+    alert("Render Edit View In-Progress");
+    //if (configId != null) {
+
+    //    ajaxSetup(POST, billCategory.apiURL.renderEditConfigViewUrl, ContentTypeJSON, DataTypeJSON, { "configId": configId }, IsAsync, IsNotCache,
+    //        function (response) {
+    //            if (response != null) {
+    //                var $el = $("#offcanvasEditConfig").offcanvas();
+    //                $el.offcanvas("show");
+    //                $("#dvEditConfig").html(response);
+    //            }
+    //            else
+    //                Swal.fire(Error("Failed to get config details"))
+    //        },
+    //        function (error) {
+    //            Swal.fire(Error("Internal server error"))
+    //        }
+    //    );
+    //}
+}
 
 BillCategory.prototype.reloadConfigurationTable = function () {
     var dataTable = this.elements.billCategoriesTable.DataTable();
