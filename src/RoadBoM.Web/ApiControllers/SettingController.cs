@@ -207,5 +207,56 @@ namespace RoadBoM.Web.ApiControllers
                 throw;
             }
         }
+
+        [HttpGet]
+        [Route("GetBillItems")]
+        public async Task<IApiResponse<List<GetBillItemResponseDTO>>> GetBillItems()
+        {
+            try
+            {
+                return await HandleApiOperationAsync(async () =>
+                {
+                    List<GetBillItemResponseDTO> output = new List<GetBillItemResponseDTO>();
+                    try
+                    {
+                        var result = await _billItemRepository.GetItems();
+                        if (result != null)
+                        {
+                            if (result.Count() > 0)
+                            {
+                                foreach (var item in result)
+                                {
+                                    output.Add(new GetBillItemResponseDTO
+                                    {
+                                        Id = item.Id,
+                                        Code = item.Code,
+                                        Description = item.Description,
+                                        Unit = item.Unit,
+                                        Order = item.Order,
+                                        CreatedBy = item.CreatedBy,
+                                        CreatedOn = item.CreatedOn,
+                                        UpdatedBy = item.UpdatedBy,
+                                        UpdatededOn = item.UpdatededOn
+                                    });
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+                    return new DefaultApiResponse<List<GetBillItemResponseDTO>>
+                    {
+                        Object = output
+                    };
+                });
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

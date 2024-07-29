@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Bill Items";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+<!-- Start Page Title -->
+<div class="pagetitle">
+    <h1>Bill Items</h1>
+</div><!-- End Page Title -->
+
+
+<p>
+    <a asp-action="Enrol">Add Bill Item</a>
+</p>
+<table id="table-billItems" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Unit</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created On</th>
+            <th scope="col">Updated On</th>
+            <th></th><!--Actions Edit, Delete ect -->
+        </tr>
+    </thead>
+</table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript" src="~/views/Setting/billItem.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+        });
+
+        let permission = {
+        };
+        let billItem = BillItem(permission);
+        billItem.init();
+    </script>
+}

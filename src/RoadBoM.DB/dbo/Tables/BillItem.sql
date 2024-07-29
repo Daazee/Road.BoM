@@ -4,7 +4,7 @@
     [Code] NVARCHAR(50) NULL, 
     [Description] NVARCHAR(100) NOT NULL, 
     [Unit] NVARCHAR(100) NULL, 
-    [Order] FLOAT NOT NULL,
+    [Order] decimal NOT NULL,
     [Status] INT NOT NULL, 
     [CreatedBy] NVARCHAR(50) NULL, 
     [CreatedOn] DATETIME NOT NULL, 

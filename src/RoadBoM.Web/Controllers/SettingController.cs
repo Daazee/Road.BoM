@@ -98,5 +98,59 @@ namespace RoadBoM.Web.Controllers
             }
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> BillItems()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetBillItems()
+        {
+            var billItems = new DefaultApiResponse<List<GetBillItemResponseDTO>>();
+            try
+            {
+                int totalRecord = 0;
+                //int filterRecord = 0;
+                var draw = Request.Form["draw"].FirstOrDefault();
+                try
+                {
+                    string Url = "https://localhost:7177/api/Setting/GetBillItems";
+                    var response = await new ApiRequest(Url).MakeHttpClientRequest(null, ApiRequest.Verbs.GET, headers);
+
+                    if (Convert.ToInt16(response.StatusCode) == 200)
+                    {
+                        string responseString = await response.Content.ReadAsStringAsync();
+                        if (!string.IsNullOrEmpty(responseString))
+                        {
+                            billItems = Newtonsoft.Json.JsonConvert.DeserializeObject<DefaultApiResponse<List<GetBillItemResponseDTO>>>(responseString);
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    billItems = new DefaultApiResponse<List<GetBillItemResponseDTO>>();
+                }
+
+                var jsonData = new
+                {
+                    draw,
+                    recordsTotal = totalRecord,
+                    data = billItems?.Object
+                };
+
+                return new JsonResult(jsonData)
+                {
+                    StatusCode = StatusCodes.Status200OK
+                };
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
     }
 }
