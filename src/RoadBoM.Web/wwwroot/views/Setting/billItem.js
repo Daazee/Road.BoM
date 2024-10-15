@@ -95,7 +95,7 @@ BillItem.prototype.bindBillItems = function () {
 };
 
 BillItem.prototype.renderEditConfigView = function (configId) {
-    alert("Render Edit View In-Progress");
+    //alert("Render Edit View In-Progress");
     //if (configId != null) {
 
     //    ajaxSetup(POST, billItem.apiURL.renderEditConfigViewUrl, ContentTypeJSON, DataTypeJSON, { "configId": configId }, IsAsync, IsNotCache,
